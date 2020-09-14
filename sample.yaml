@@ -5,7 +5,7 @@
    openshift_api: "https://api.ctscluster01.niandc.org:6443"
    openshift_token: "qC2jtmD78t7Dl2GtE5-3qisAlpuhVNkPGPDPjGdJ1Fw"
  tasks:
- - name: コンテナログの取得
+ - name: 名前空間取得
    uri:
      url: "{{ openshift_api }}/api/v1/namespaces"
      validate_certs: no
@@ -14,6 +14,6 @@
        Authorization: "Bearer {{ openshift_token }}"
      return_content: yes
    register: _nslist
- - name: ログ出力
+ - name: 名前空間一覧出力
    debug:
      var: _nslist
