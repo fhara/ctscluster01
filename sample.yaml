@@ -2,7 +2,7 @@
   gather_facts: false
   connection: local
   vars:
-    openshift_api: "https://api.ctscluster01.niandc.org:6443"
+    openshift_api: "https://api.asdf.niandc.asdf:6443"
     openshift_token: "asdf"
   tasks:
   - name: 名前空間取得
