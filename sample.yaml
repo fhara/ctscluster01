@@ -1,19 +1,19 @@
 - hosts: localhost
- gather_facts: false
- connection: local
- vars:
-   openshift_api: "https://api.ctscluster01.niandc.org:6443"
-   openshift_token: "qC2jtmD78t7Dl2GtE5-3qisAlpuhVNkPGPDPjGdJ1Fw"
- tasks:
- - name: 名前空間取得
-   uri:
-     url: "{{ openshift_api }}/api/v1/namespaces"
-     validate_certs: no
-     method: GET
-     headers:
-       Authorization: "Bearer {{ openshift_token }}"
-     return_content: yes
-   register: _nslist
- - name: 名前空間一覧出力
-   debug:
-     var: _nslist
+  gather_facts: false
+  connection: local
+  vars:
+    openshift_api: "https://api.ctscluster01.niandc.org:6443"
+    openshift_token: "qC2jtmD78t7Dl2GtE5-3qisAlpuhVNkPGPDPjGdJ1Fw"
+  tasks:
+  - name: 名前空間取得
+    uri:
+      url: "{{ openshift_api }}/api/v1/namespaces"
+      validate_certs: no
+      method: GET
+      headers:
+        Authorization: "Bearer {{ openshift_token }}"
+      return_content: yes
+    register: _nslist
+  - name: 名前空間一覧出力
+    debug:
+      var: _nslist
