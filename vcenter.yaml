@@ -1,0 +1,16 @@
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: 名前空間取得
+    uri:
+      url: "{{ openshift_api }}/api/v1/namespaces"
+      validate_certs: no
+      method: GET
+      headers:
+        Authorization: "Bearer {{ openshift_token }}"
+      return_content: yes
+    register: _nslist
+  - name: 名前空間一覧出力
+    debug:
+      var: _nslist
