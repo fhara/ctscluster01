@@ -1,0 +1,6 @@
+-
+  hosts: cp4mcm_421f3f1f-3349-2955-6a7a-1471021a5d3e
+  become: yes
+  tasks:
+    - name: cpu process
+      command: ps aux --sort -%cpu | head
