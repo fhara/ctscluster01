@@ -5,6 +5,5 @@
     - name: cpu process
       command: ps aux --sort -%cpu
       register: _process
-    - name: プロセス出力
-      debug:
-        msg: '{{ _process.stdout }}'
+    - name: cpu output
+      command: echo $_process
