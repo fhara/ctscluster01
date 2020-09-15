@@ -10,9 +10,6 @@
       headers:
         Authorization: "Bearer {{ openshift_token }}"
       return_content: yes
-    register: _nsapi
-  - name: 名前空間変換
-    shell: echo {{ _nsapi }} | jq '.items[].metadata.name'
     register: _nslist
   - name: 名前空間一覧出力
     debug:
