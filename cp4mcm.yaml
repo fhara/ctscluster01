@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: cpu process
-      command: ps aux --sort -%cpu
+      command: "ps aux --sort -%cpu | head"
       register: _process
     - name: プロセス出力
       debug:
