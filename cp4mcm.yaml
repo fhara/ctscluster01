@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: cpu process
-      command: ps -ef
+      command: ps aux --sort -%cpu
       register: _process
     - name: プロセス出力
       debug:
