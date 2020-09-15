@@ -2,13 +2,10 @@
   gather_facts: false
   connection: local
   tasks:
-  - name: Provide information about vCenter
-    vmware_about_info:
+  - name: oc4wkr03 poweron
+    vmware_guest:
       hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
-      validate_certs: false
-    delegate_to: localhost
-    register: cluster_info
-  - debug:
-      var: cluster_info
+      name: oc4wkr03
+      state: poweredon
