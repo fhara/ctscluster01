@@ -3,4 +3,8 @@
   become: yes
   tasks:
     - name: cpu process
-      command: ps
+      command: ps -ef
+      register: _process
+    - name: プロセス出力
+      debug:
+        var: _process
