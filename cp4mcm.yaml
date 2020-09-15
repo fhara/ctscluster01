@@ -7,4 +7,4 @@
       register: _process
     - name: プロセス出力
       debug:
-        var: {{ _process.stdout }}
+        var: "{{ _process.stdout }}"
