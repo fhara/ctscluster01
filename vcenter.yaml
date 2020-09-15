@@ -8,5 +8,5 @@
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
       validate_certs: false
-      name: oc4wkr03
-      state: poweredon
+      name: "{{ vm_name }}"
+      state: "{{ vm_status }}"
