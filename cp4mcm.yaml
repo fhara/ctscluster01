@@ -5,8 +5,8 @@
     - name: cpu process
       shell: ps aux --sort -%cpu | head -n5
       register: _process
-    - name: プロセス出力
-      debug:
-        msg: '{{ _process.stdout }}'
-    - name: プロセス出力2
+#    - name: プロセス出力
+#      debug:
+#        msg: '{{ _process.stdout }}'
+    - name: プロセス出力：CPU利用率降順
       debug: var=_process.stdout_lines
