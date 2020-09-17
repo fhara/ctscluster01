@@ -10,3 +10,4 @@
       validate_certs: false
       name: "{{ vm_name }}"
       state: "{{ vm_status }}"
+# https://docs.ansible.com/ansible/latest/modules/vmware_guest_module.html
